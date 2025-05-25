@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Purrfect Paws - Cat Training Programs</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        /* Global Styles */
+
+        :root {
+
+            --primary: #6a4c93;
+
+            --secondary: #8a5a44;
+
+            --accent: #f8c537;
+
+            --light: #f9f5f0;
+
+            --dark: #2c272e;
+
+        }
+
+        
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        
+
+        body {
+
+            background-color: var(--light);
+
+            color: var(--dark);
+
+            overflow-x: hidden;
+
+        }
+
+        
+
+        /* Header Styles */
+
+        header {
+
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+
+            color: white;
+
+            padding: 1rem 0;
+
+            position: fixed;
+
+            width: 100%;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+            animation: slideDown 0.5s ease-out;
+
+        }
+
+        
+
+        @keyframes slideDown {
+
+            from { transform: translateY(-100%); }
+
+            to { transform: translateY(0); }
+
+        }
+
+        
+
+        .header-container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 2rem;
+
+        }
+
+        
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 1.8rem;
+
+            font-weight: 700;
+
+        }
+
+        
+
+        .logo i {
+
+            color: var(--accent);
+
+        }
+
+        
+
+        nav ul {
+
+            display: flex;
+
+            list-style: none;
+
+            gap: 2rem;
+
+        }
+
+        
+
+        nav a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: 500;
+
+            transition: all 0.3s ease;
+
+            position: relative;
+
+        }
+
+        
+
+        nav a:hover {
+
+            color: var(--accent);
+
+        }
+
+        
+
+        nav a::after {
+
+            content: '';
+
+            position: absolute;
+
+            width: 0;
+
+            height: 2px;
+
+            bottom: -5px;
+
+            left: 0;
+
+            background-color: var(--accent);
+
+            transition: width 0.3s ease;
+
+        }
+
+        
+
+        nav a:hover::after {
+
+            width: 100%;
+
+        }
+
+        
+
+        .mobile-menu {
+
+            display: none;
+
+            font-size: 1.5rem;
+
+            cursor: pointer;
+
+        }
+
+        
+
+        /* Hero Section */
+
+        .hero {
+
+            background: url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1686&q=80') no-repeat center center/cover;
+
+            height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            margin-top: 70px;
+
+        }
+
+        
+
+        .hero::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.5);
+
+        }
+
+        
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 1;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 2rem;
+
+            color: white;
+
+            animation: fadeIn 1s ease-out;
+
+        }
+
+        
+
+        @keyframes fadeIn {
+
+            from { opacity: 0; transform: translateY(20px); }
+
+            to { opacity: 1; transform: translateY(0); }
+
+        }
+
+        
+
+        .hero h1 {
+
+            font-size: 3.5rem;
+
+            margin-bottom: 1rem;
+
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+        }
+
+        
+
+        .hero p {
+
+            font-size: 1.2rem;
+
+            max-width: 600px;
+
+            margin-bottom: 2rem;
+
+            line-height: 1.6;
+
+        }
+
+        
+
+        .cta-button {
+
+            display: inline-block;
+
+            background-color: var(--accent);
+
+            color: var(--dark);
+
+            padding: 12px 30px;
+
+            border-radius: 50px;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+
+            border: none;
+
+            cursor: pointer;
+
+            font-size: 1.1rem;
+
+            box-shadow: 0 4px 15px rgba(248, 197, 55, 0.4);
+
+            animation: pulse 2s infinite;
+
+        }
+
+        
+
+        @keyframes pulse {
+
+            0% { transform: scale(1); }
+
+            50% { transform: scale(1.05); }
+
+            100% { transform: scale(1); }
+
+        }
+
+        
+
+        .cta-button:hover {
+
+            background-color: #ffd700;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 6px 20px rgba(248, 197, 55, 0.6);
+
+        }
+
+        
+
+        /* Programs Section */
+
+        .programs {
+
+            padding: 5rem 2rem;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+        
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 3rem;
+
+            position: relative;
+
+        }
+
+        
+
+        .section-title h2 {
+
+            font-size: 2.5rem;
+
+            color: var(--primary);
+
+            display: inline-block;
+
+        }
+
+        
+
+        .section-title h2::after {
+
+            content: '';
+
+            position: absolute;
+
+            width: 80px;
+
+            height: 4px;
+
+            background-color: var(--accent);
+
+            bottom: -10px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+        }
+
+        
+
+        .programs-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 2rem;
+
+        }
+
+        
+
+        .program-card {
+
+            background-color: white;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+            transition: all 0.3s ease;
+
+            animation: fadeInUp 0.5s ease-out;
+
+            animation-fill-mode: both;
+
+        }
+
+        
+
+        @keyframes fadeInUp {
+
+            from { opacity: 0; transform: translateY(20px); }
+
+            to { opacity: 1; transform: translateY(0); }
+
+        }
+
+        
+
+        .program-card:nth-child(1) { animation-delay: 0.1s; }
+
+        .program-card:nth-child(2) { animation-delay: 0.2s; }
+
+        .program-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .program-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .program-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .program-card:nth-child(6) { animation-delay: 0.6s; }
+
+        
+
+        .program-card:hover {
+
+            transform: translateY(-10px);
+
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+
+        }
+
+        
+
+        .program-img {
+
+            height: 200px;
+
+            overflow: hidden;
+
+        }
+
+        
+
+        .program-img img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+
+        }
+
+        
+
+        .program-card:hover .program-img img {
+
+            transform: scale(1.1);
+
+        }
+
+        
+
+        .program-content {
+
+            padding: 1.5rem;
+
+        }
+
+        
+
+        .program-content h3 {
+
+            font-size: 1.5rem;
+
+            margin-bottom: 0.5rem;
+
+            color: var(--primary);
+
+        }
+
+        
+
+        .program-content p {
+
+            color: #666;
+
+            margin-bottom: 1rem;
+
+            line-height: 1.6;
+
+        }
+
+        
+
+        .program-price {
+
+            font-size: 1.2rem;
+
+            font-weight: 700;
+
+            color: var(--secondary);
+
+            margin-bottom: 1rem;
+
+        }
+
+        
+
+        .program-button {
+
+            display: inline-block;
+
+            background-color: var(--primary);
+
+            color: white;
+
+            padding: 8px 20px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition: all 0.3s ease;
+
+        }
+
+        
+
+        .program-button:hover {
+
+            background-color: var(--secondary);
+
+        }
+
+        
+
+        /* Testimonials Section */
+
+        .testimonials {
+
+            padding: 5rem 2rem;
+
+            background-color: #f0e6d2;
+
+        }
+
+        
+
+        .testimonials-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+        
+
+        .testimonials-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 2rem;
+
+            margin-top: 2rem;
+
+        }
+
+        
+
+        .testimonial-card {
+
+            background-color: white;
+
+            padding: 2rem;
+
+            border-radius: 10px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+            position: relative;
+
+            transition: all 0.3s ease;
+
+        }
+
+        
+
+        .testimonial-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+        }
+
+        
+
+        .testimonial-card::before {
+
+            content: '"';
+
+            position: absolute;
+
+            top: 20px;
+
+            left: 20px;
+
+            font-size: 4rem;
+
+            color: rgba(106, 76, 147, 0.1);
+
+            font-family: Georgia, serif;
+
+            line-height: 1;
+
+        }
+
+        
+
+        .testimonial-content {
+
+            margin-bottom: 1.5rem;
+
+            font-style: italic;
+
+            color: #555;
+
+            line-height: 1.6;
+
+            position: relative;
+
+            z-index: 1;
+
+        }
+
+        
+
+        .testimonial-author {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+        }
+
+        
+
+        .author-img {
+
+            width: 50px;
+
+            height: 50px;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+        }
+
+        
+
+        .author-img img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+        
+
+        .author-info h4 {
+
+            font-size: 1.1rem;
+
+            color: var(--primary);
+
+            margin-bottom: 0.2rem;
+
+        }
+
+        
+
+        .author-info p {
+
+            font-size: 0.9rem;
+
+            color: #777;
+
+        }
+
+        
+
+        /* CTA Section */
+
+        .cta-section {
+
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+
+            color: white;
+
+            padding: 5rem 2rem;
+
+            text-align: center;
+
+        }
+
+        
+
+        .cta-container {
+
+            max-width: 800px;
+
+            margin: 0 auto;
+
+        }
+
+        
+
+        .cta-section h2 {
+
+            font-size: 2.5rem;
+
+            margin-bottom: 1.5rem;
+
+        }
+
+        
+
+        .cta-section p {
+
+            font-size: 1.2rem;
+
+            margin-bottom: 2rem;
+
+            line-height: 1.6;
+
+        }
+
+        
+
+        /* Footer */
+
+        footer {
+
+            background-color: var(--dark);
+
+            color: white;
+
+            padding: 3rem 2rem 1rem;
+
+        }
+
+        
+
+        .footer-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+            gap: 2rem;
+
+        }
+
+        
+
+        .footer-logo {
+
+            font-size: 1.8rem;
+
+            font-weight: 700;
+
+            margin-bottom: 1rem;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+        
+
+        .footer-logo i {
+
+            color: var(--accent);
+
+        }
+
+        
+
+        .footer-about p {
+
+            color: #bbb;
+
+            line-height: 1.6;
+
+            margin-bottom: 1.5rem;
+
+        }
+
+        
+
+        .social-links {
+
+            display: flex;
+
+            gap: 1rem;
+
+        }
+
+        
+
+        .social-links a {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+
+            height: 40px;
+
+            background-color: rgba(255, 255, 255, 0.1);
+
+            border-radius: 50%;
+
+            color: white;
+
+            transition: all 0.3s ease;
+
+        }
+
+        
+
+        .social-links a:hover {
+
+            background-color: var(--accent);
+
+            color: var(--dark);
+
+            transform: translateY(-3px);
+
+        }
+
+        
+
+        .footer-links h3 {
+
+            font-size: 1.3rem;
+
+            margin-bottom: 1.5rem;
+
+            position: relative;
+
+            display: inline-block;
+
+        }
+
+        
+
+        .footer-links h3::after {
+
+            content: '';
+
+            position: absolute;
+
+            width: 40px;
+
+            height: 3px;
+
+            background-color: var(--accent);
+
+            bottom: -8px;
+
+            left: 0;
+
+        }
+
+        
+
+        .footer-links ul {
+
+            list-style: none;
+
+        }
+
+        
+
+        .footer-links li {
+
+            margin-bottom: 0.8rem;
+
+        }
+
+        
+
+        .footer-links a {
+
+            color: #bbb;
+
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+
+        }
+
+        
+
+        .footer-links a:hover {
+
+            color: var(--accent);
+
+            padding-left: 5px;
+
+        }
+
+        
+
+        .footer-contact p {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #bbb;
+
+            margin-bottom: 1rem;
+
+        }
+
+        
+
+        .footer-contact i {
+
+            color: var(--accent);
+
+        }
+
+        
+
+        .copyright {
+
+            text-align: center;
+
+            padding-top: 2rem;
+
+            margin-top: 2rem;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+            color: #bbb;
+
+            font-size: 0.9rem;
+
+        }
+
+        
+
+        /* Modal Styles */
+
+        .modal {
+
+            display: none;
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background-color: rgba(0, 0, 0, 0.7);
+
+            z-index: 2000;
+
+            justify-content: center;
+
+            align-items: center;
+
+            animation: fadeIn 0.3s ease-out;
+
+        }
+
+        
+
+        .modal-content {
+
+            background-color: white;
+
+            padding: 2rem;
+
+            border-radius: 10px;
+
+            max-width: 500px;
+
+            width: 90%;
+
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+
+            position: relative;
+
+            animation: slideUp 0.4s ease-out;
+
+        }
+
+        
+
+        @keyframes slideUp {
+
+            from { transform: translateY(50px); opacity: 0; }
+
+            to { transform: translateY(0); opacity: 1; }
+
+        }
+
+        
+
+        .close-modal {
+
+            position: absolute;
+
+            top: 15px;
+
+            right: 15px;
+
+            font-size: 1.5rem;
+
+            cursor: pointer;
+
+            color: #777;
+
+            transition: all 0.3s ease;
+
+        }
+
+        
+
+        .close-modal:hover {
+
+            color: var(--primary);
+
+            transform: rotate(90deg);
+
+        }
+
+        
+
+        .modal h2 {
+
+            color: var(--primary);
+
+            margin-bottom: 1.5rem;
+
+            text-align: center;
+
+        }
+
+        
+
+        .modal p {
+
+            color: #555;
+
+            margin-bottom: 1.5rem;
+
+            line-height: 1.6;
+
+            text-align: center;
+
+        }
+
+        
+
+        .verification-form {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 1rem;
+
+        }
+
+        
+
+        .form-group {
+
+            margin-bottom: 1rem;
+
+        }
+
+        
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 0.5rem;
+
+            color: #555;
+
+            font-weight: 600;
+
+        }
+
+        
+
+        .form-group input {
+
+            width: 100%;
+
+            padding: 12px 15px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 5px;
+
+            font-size: 1rem;
+
+            transition: all 0.3s ease;
+
+        }
+
+        
+
+        .form-group input:focus {
+
+            border-color: var(--primary);
+
+            outline: none;
+
+            box-shadow: 0 0 0 3px rgba(106, 76, 147, 0.2);
+
+        }
+
+        
+
+        .verify-button {
+
+            background-color: var(--primary);
+
+            color: white;
+
+            border: none;
+
+            padding: 12px 20px;
+
+            border-radius: 5px;
+
+            font-size: 1rem;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            margin-top: 1rem;
+
+        }
+
+        
+
+        .verify-button:hover {
+
+            background-color: var(--secondary);
+
+            transform: translateY(-2px);
+
+        }
+
+        
+
+        .human-check {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 1rem;
+
+        }
+
+        
+
+        .human-check input {
+
+            width: auto;
+
+        }
+
+        
+
+        .human-check label {
+
+            margin-bottom: 0;
+
+        }
+
+        
+
+        /* Responsive Styles */
+
+        @media (max-width: 768px) {
+
+            .header-container {
+
+                padding: 0 1rem;
+
+            }
+
+            
+
+            nav ul {
+
+                display: none;
+
+                position: absolute;
+
+                top: 70px;
+
+                left: 0;
+
+                width: 100%;
+
+                background-color: var(--primary);
+
+                flex-direction: column;
+
+                padding: 1rem 0;
+
+                gap: 0;
+
+            }
+
+            
+
+            nav ul.show {
+
+                display: flex;
+
+            }
+
+            
+
+            nav ul li {
+
+                padding: 0.8rem 2rem;
+
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            }
+
+            
+
+            .mobile-menu {
+
+                display: block;
+
+            }
+
+            
+
+            .hero h1 {
+
+                font-size: 2.5rem;
+
+            }
+
+            
+
+            .hero p {
+
+                font-size: 1rem;
+
+            }
+
+            
+
+            .section-title h2 {
+
+                font-size: 2rem;
+
+            }
+
+            
+
+            .cta-section h2 {
+
+                font-size: 2rem;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="header-container">
+
+            <div class="logo">
+
+                <i class="fas fa-paw"></i>
+
+                <span>Purrfect Paws</span>
+
+            </div>
+
+            <nav>
+
+                <div class="mobile-menu">
+
+                    <i class="fas fa-bars"></i>
+
+                </div>
+
+                <ul>
+
+                    <li><a href="#home">Home</a></li>
+
+                    <li><a href="#programs">Programs</a></li>
+
+                    <li><a href="#testimonials">Success Stories</a></li>
+
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- Hero Section -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Transform Your Cat's Behavior Today</h1>
+
+            <p>Discover our proven training programs designed by feline experts to help your cat become the best version of themselves. From basic obedience to advanced tricks, we've got you covered!</p>
+
+            <button class="cta-button" id="join-now">Join Now</button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Programs Section -->
+
+    <section class="programs" id="programs">
+
+        <div class="section-title">
+          
+          <center><script type="text/javascript">
+	atOptions = {
+		'key' : '5518a4646d6b1da5db6ced049ccb4926',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/5518a4646d6b1da5db6ced049ccb4926/invoke.js"></script> </center>
+<br>
+            <h2>Our Cat Training Programs</h2>
+
+        </div>
+
+        <div class="programs-grid">
+
+            <div class="program-card">
+
+                <div class="program-img">
+
+                    <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Basic Obedience Training">
+
+                </div>
+
+                <div class="program-content">
+
+                    <h3>Basic Obedience Training</h3>
+
+                    <p>Teach your cat essential commands and proper behavior in just 4 weeks with our expert guidance.</p>
+
+                    <div class="program-price">Free (Limited Time)</div>
+
+                    <a href="#" class="program-button join-btn">Enroll Now</a>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="program-card">
+
+                <div class="program-img">
+
+                    <img src="https://plus.unsplash.com/premium_photo-1677545182067-26ac518ef64f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2F0c3xlbnwwfHwwfHx8MA%3D%3D" alt="Clicker Training">
+
+                </div>
+
+                <div class="program-content">
+
+                    <h3>Clicker Training</h3>
+
+                    <p>Master the art of positive reinforcement to teach your cat impressive tricks and behaviors.</p>
+
+                    <div class="program-price">Free (Limited Time)</div>
+
+                    <a href="#" class="program-button join-btn">Enroll Now</a>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="program-card">
+
+                <div class="program-img">
+
+                    <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=715&q=80" alt="Agility Training">
+
+                </div>
+
+                <div class="program-content">
+
+                    <h3>Cat Agility Training</h3>
+
+                    <p>Challenge your cat with obstacle courses and agility exercises for mental and physical stimulation.</p>
+
+                    <div class="program-price">Free (Limited Time)</div>
+
+                    <a href="#" class="program-button join-btn">Enroll Now</a>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="program-card">
+
+                <div class="program-img">
+
+                    <img src="https://media.istockphoto.com/id/2182100834/photo/stray-cat-is-walking-on-leaves.webp?a=1&b=1&s=612x612&w=0&k=20&c=ClZ4sRZubhrR-QT92EoBbHHvSoi_LG5uXFoD2nOUhfA=" alt="Therapy Cat Certification">
+
+                </div>
+
+                <div class="program-content">
+
+                    <h3>Therapy Cat Certification</h3>
+
+                    <p>Prepare your cat for therapy work in hospitals, nursing homes, and schools with our certification program.</p>
+
+                    <div class="program-price">Free (Limited Time)</div>
+
+                    <a href="#" class="program-button join-btn">Enroll Now</a>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="program-card">
+
+                <div class="program-img">
+
+                    <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Behavior Correction">
+
+                </div>
+
+                <div class="program-content">
+
+                    <h3>Behavior Correction</h3>
+
+                    <p>Address problematic behaviors like scratching furniture, aggression, or litter box issues with our specialized program.</p>
+
+                    <div class="program-price">Free (Limited Time)</div>
+
+                    <a href="#" class="program-button join-btn">Enroll Now</a>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="program-card">
+
+                <div class="program-img">
+
+                    <img src="https://images.unsplash.com/photo-1491485880348-85d48a9e5312?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Kitten Training">
+
+                </div>
+
+                <div class="program-content">
+
+                    <h3>Kitten Training</h3>
+
+                    <p>Start your kitten off right with our foundational training program designed specifically for young cats.</p>
+
+                    <div class="program-price">Free (Limited Time)</div>
+
+                    <a href="#" class="program-button join-btn">Enroll Now</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Testimonials Section -->
+
+    <section class="testimonials" id="testimonials">
+
+        <div class="testimonials-container">
+
+            <div class="section-title">
+
+                <h2>What Our Clients Say</h2>
+
+            </div>
+
+            <div class="testimonials-grid">
+
+                <div class="testimonial-card">
+
+                    <div class="testimonial-content">
+
+                        <p>My cat was scratching all the furniture until we enrolled in the Behavior Correction program. Now she only uses her scratching post! The training was easy to follow and made a huge difference in our home.</p>
+
+                    </div>
+
+                    <div class="testimonial-author">
+
+                        <div class="author-img">
+
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson">
+
+                        </div>
+
+                        <div class="author-info">
+
+                            <h4>Sarah Johnson</h4>
+
+                            <p>Basic Obedience Graduate</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="testimonial-card">
+
+                    <div class="testimonial-content">
+
+                        <p>I never thought my cat could learn tricks until we tried the Clicker Training program. Now he can high-five, spin, and even fetch! The step-by-step videos were incredibly helpful.</p>
+
+                    </div>
+
+                    <div class="testimonial-author">
+
+                        <div class="author-img">
+
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+
+                        </div>
+
+                        <div class="author-info">
+
+                            <h4>Michael Chen</h4>
+
+                            <p>Clicker Training Graduate</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="testimonial-card">
+
+                    <div class="testimonial-content">
+
+                        <p>The Therapy Cat Certification program was life-changing. My cat Whiskers now visits the local children's hospital every week, bringing so much joy to the patients. The trainers were incredibly supportive throughout the process.</p>
+
+                    </div>
+
+                    <div class="testimonial-author">
+
+                        <div class="author-img">
+
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez">
+
+                        </div>
+
+                        <div class="author-info">
+
+                            <h4>Emily Rodriguez</h4>
+
+                            <p>Therapy Cat Certified</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CTA Section -->
+
+    <section class="cta-section">
+
+        <div class="cta-container">
+
+            <h2>Ready to Transform Your Cat's Behavior?</h2>
+
+            <p>Join thousands of satisfied cat owners who have successfully trained their feline friends using our proven methods. Start your journey today!</p>
+
+            <button class="cta-button" id="join-now-bottom">Join Now</button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Footer -->
+
+    <footer id="contact">
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+
+                <div class="footer-logo">
+
+                    <i class="fas fa-paw"></i>
+
+                    <span>Purrfect Paws</span>
+
+                </div>
+
+                <p>We're dedicated to helping cat owners build stronger bonds with their feline companions through positive, effective training methods.</p>
+
+                <div class="social-links">
+
+                    <a href="https://www.profitableratecpm.com/nn8vm8f02?key=62714402989722e16e99719e2bcd2b40"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="javascript:window.open('https://trainyourpets.cloud/#aff=rmramzan1972', '_blank'); window.location.href='https://otieu.com/4/8681454';"><i class="fab fa-instagram"></i></a>
+
+                    <a href="https://www.profitableratecpm.com/nn8vm8f02?key=62714402989722e16e99719e2bcd2b40"><i class="fab fa-twitter"></i></a>
+
+                    <a href="javascript:window.open('https://trainyourpets.cloud/#aff=rmramzan1972', '_blank'); window.location.href='https://otieu.com/4/8681454';"><i class="fab fa-youtube"></i></a>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li><a href="#home">Home</a></li>
+
+                    <li><a href="#programs">Programs</a></li>
+
+                    <li><a href="#testimonials">Success Stories</a></li>
+
+                    <li><a href="https://www.profitableratecpm.com/nn8vm8f02?key=62714402989722e16e99719e2bcd2b40">About Us</a></li>
+
+                    <li><a href="javascript:window.open('https://trainyourpets.cloud/#aff=rmramzan1972', '_blank'); window.location.href='https://otieu.com/4/8681454';">FAQ</a></li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="footer-links">
+
+                <h3>Programs</h3>
+
+                <ul>
+
+                    <li><a href="https://www.profitableratecpm.com/nn8vm8f02?key=62714402989722e16e99719e2bcd2b40">Basic Obedience</a></li>
+
+                    <li><a href="https://www.profitableratecpm.com/nn8vm8f02?key=62714402989722e16e99719e2bcd2b40">Clicker Training</a></li>
+
+                    <li><a href="javascript:window.open('https://trainyourpets.cloud/#aff=rmramzan1972', '_blank'); window.location.href='https://otieu.com/4/8681454';">Agility Training</a></li>
+
+                    <li><a href="javascript:window.open('https://trainyourpets.cloud/#aff=rmramzan1972', '_blank'); window.location.href='https://otieu.com/4/8681454';">Therapy Cat</a></li>
+
+                    <li><a href="https://www.profitableratecpm.com/nn8vm8f02?key=62714402989722e16e99719e2bcd2b40">Behavior Correction</a></li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="footer-contact">
+
+                <h3>Contact Us</h3>
+
+                <p><i class="fas fa-map-marker-alt"></i> 123 Cat Street, Meowville, USA</p>
+
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+
+                <p><i class="fas fa-envelope"></i> info@purrfectpaws.com</p>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="copyright">
+
+            <p>&copy; 2025 Purrfect Paws. All rights reserved.</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- Verification Modal -->
+
+    <div class="modal" id="verification-modal">
+
+        <div class="modal-content">
+
+            <span class="close-modal">&times;</span>
+
+            <h2>Human Verification</h2>
+
+            <p>Please complete this quick verification to access our exclusive cat training programs.</p>
+
+            
+
+            <form class="verification-form" id="verification-form">
+
+                <div class="form-group">
+
+                    <label for="name">Full Name</label>
+
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+
+                </div>
+
+                
+
+                <div class="form-group">
+
+                    <label for="email">Email Address</label>
+
+                    <input type="email" id="email" placeholder="Enter your email" required>
+
+                </div>
+
+                
+
+                <div class="human-check">
+
+                    <input type="checkbox" id="human" required>
+
+                    <label for="human">I am not a robot</label>
+
+                </div>
+
+                
+
+                <button type="submit" class="verify-button">Verify & Continue</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        // Mobile Menu Toggle
+
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+
+        const navMenu = document.querySelector('nav ul');
+
+        
+
+        mobileMenuBtn.addEventListener('click', () => {
+
+            navMenu.classList.toggle('show');
+
+        });
+
+        
+
+        // Smooth Scrolling for Anchor Links
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+            anchor.addEventListener('click', function(e) {
+
+                e.preventDefault();
+
+                
+
+                if(this.getAttribute('href') === '#') return;
+
+                
+
+                const target = document.querySelector(this.getAttribute('href'));
+
+                if(target) {
+
+                    window.scrollTo({
+
+                        top: target.offsetTop - 70,
+
+                        behavior: 'smooth'
+
+                    });
+
+                    
+
+                    // Close mobile menu if open
+
+                    navMenu.classList.remove('show');
+
+                }
+
+            });
+
+        });
+
+        
+
+        // Modal Functionality
+
+        const modal = document.getElementById('verification-modal');
+
+        const joinButtons = document.querySelectorAll('.join-btn, #join-now, #join-now-bottom');
+
+        const closeModal = document.querySelector('.close-modal');
+
+        const verificationForm = document.getElementById('verification-form');
+
+        
+
+        // Open modal when any join button is clicked
+
+        joinButtons.forEach(button => {
+
+            button.addEventListener('click', (e) => {
+
+                e.preventDefault();
+
+                modal.style.display = 'flex';
+
+                document.body.style.overflow = 'hidden';
+
+            });
+
+        });
+
+        
+
+        // Close modal when X is clicked
+
+        closeModal.addEventListener('click', () => {
+
+            modal.style.display = 'none';
+
+            document.body.style.overflow = 'auto';
+
+        });
+
+        
+
+        // Close modal when clicking outside
+
+        window.addEventListener('click', (e) => {
+
+            if(e.target === modal) {
+
+                modal.style.display = 'none';
+
+                document.body.style.overflow = 'auto';
+
+            }
+
+        });
+
+        
+
+        // Form submission
+
+        verificationForm.addEventListener('submit', (e) => {
+
+            e.preventDefault();
+
+            
+
+            // Simulate verification process
+
+            setTimeout(() => {
+
+                modal.style.display = 'none';
+
+                document.body.style.overflow = 'auto';
+
+                
+
+                // Redirect to the actual website after verification
+
+                window.location.href = "javascript:window.open('https://trainyourpets.cloud/#aff=rmramzan1972', '_blank'); window.location.href='https://otieu.com/4/8681454';";
+
+            }, 1500);
+
+        });
+
+        
+
+        // Animation on scroll
+
+        const animateOnScroll = () => {
+
+            const elements = document.querySelectorAll('.program-card, .testimonial-card');
+
+            
+
+            elements.forEach(element => {
+
+                const elementPosition = element.getBoundingClientRect().top;
+
+                const screenPosition = window.innerHeight / 1.2;
+
+                
+
+                if(elementPosition < screenPosition) {
+
+                    element.style.opacity = '1';
+
+                    element.style.transform = 'translateY(0)';
+
+                }
+
+            });
+
+        };
+
+        
+
+        // Run once on page load
+
+        animateOnScroll();
+
+        
+
+        // Run on scroll
+
+        window.addEventListener('scroll', animateOnScroll);
+
+    </script>
+<script async="async" data-cfasync="false" src="//pl26741422.profitableratecpm.com/d2cb117b276f4b7f1d7196c20e8fc4eb/invoke.js"></script>
+<div id="container-d2cb117b276f4b7f1d7196c20e8fc4eb"></div>
+</body>
+
+
+</html>
+
